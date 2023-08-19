@@ -92,7 +92,7 @@ const resolve = await player.search(args.join(' '));
 if (!resolve || [LoadType.ERROR, LoadType.EMPTY].includes(resolve.loadType)) return message.reply({ content: "No match songs result found!" });
 
 if (resolve.loadType === LoadType.PLAYLIST) {
-        for (const track of resolve.data.tracks) {
+  for (const track of resolve.data.tracks) {
         player.queue.add(track);
     }
 } else if (resolve.loadType === LoadType.SEARCH) {
