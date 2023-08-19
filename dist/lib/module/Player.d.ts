@@ -6,7 +6,7 @@ export interface PlayerOptions {
     voiceId: string;
     volume: number;
     textId: string;
-    shoukaku: ShoukakuPlayer;
+    ShoukakuPlayer: any;
 }
 export declare class Player {
     manager: Ferralink;

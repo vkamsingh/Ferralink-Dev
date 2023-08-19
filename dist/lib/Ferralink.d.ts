@@ -36,7 +36,7 @@ export declare interface Ferralink {
 }
 export declare class Ferralink extends EventEmitter {
     shoukaku: Shoukaku;
-    player: Map<createPlayerOptions['guildId'], playerMapOptions>;
+    players: Map<createPlayerOptions['guildId'], playerMapOptions>;
     defaultSearchEngine: FerralinkOptions['defaultSearchEngine'];
     constructor(options: FerralinkOptions, connector: Connector);
     createPlayer(options: createPlayerOptions): Promise<playerMapOptions>;

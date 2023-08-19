@@ -6,7 +6,7 @@ const shoukaku_1 = require("shoukaku");
 const Player_1 = require("./module/Player");
 class Ferralink extends events_1.EventEmitter {
     shoukaku;
-    player;
+    players;
     defaultSearchEngine;
     constructor(options, connector) {
         super();
@@ -15,29 +15,32 @@ class Ferralink extends events_1.EventEmitter {
         if (!options.shoukakuoptions)
             throw new Error('[FerraLink] => FerralinkOptions must contain a shoukakuoptions property');
         this.shoukaku = new shoukaku_1.Shoukaku(connector, options.nodes, options.shoukakuoptions);
-        this.player = new Map();
+        this.players = new Map();
         this.defaultSearchEngine = options?.defaultSearchEngine || 'ytsearch';
     }
     async createPlayer(options) {
-        const existing = this.player.get(options.guildId);
-        if (existing)
+        let existing = this.players.get(options.guildId);
+        if (!existing) {
+            const ShoukakuPlayer = await this.shoukaku.joinVoiceChannel({
+                guildId: options.guildId,
+                channelId: options.voiceId,
+                shardId: options.shardId,
+                deaf: options?.deaf || true,
+            });
+            existing = new Player_1.Player(this, {
+                guildId: options.guildId,
+                voiceId: options.voiceId,
+                volume: options?.volume || 100,
+                textId: options.textId,
+                ShoukakuPlayer
+            });
+            this.players.set(options.guildId, existing);
+            this.emit('PlayerCreate', existing);
             return existing;
-        const ShoukakuPlayer = await this.shoukaku.joinVoiceChannel({
-            guildId: options.guildId,
-            channelId: options.voiceId,
-            shardId: options.shardId,
-            deaf: options.deaf || true,
-        });
-        const FerralinkPlayer = new Player_1.Player(this, {
-            guildId: options.guildId,
-            voiceId: options.voiceId,
-            volume: options.volume || 100,
-            textId: options.textId,
-            shoukaku: ShoukakuPlayer
-        });
-        this.player.set(options.guildId, FerralinkPlayer);
-        this.emit('PlayerCreate', FerralinkPlayer);
-        return FerralinkPlayer;
+        }
+        else {
+            return existing;
+        }
     }
     async search(queue, options = { engine: this.defaultSearchEngine }) {
         const node = this.shoukaku.getIdealNode();

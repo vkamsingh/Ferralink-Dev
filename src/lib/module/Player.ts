@@ -8,7 +8,7 @@ export interface PlayerOptions {
     voiceId: string;
     volume: number;
     textId: string;
-    shoukaku: ShoukakuPlayer;
+    ShoukakuPlayer;
 }
 
 //** @type Player */
@@ -30,8 +30,8 @@ export class Player {
         this.guildId = options.guildId;
         this.voiceId = options.voiceId;
         this.textId = options.textId;
-        this.volume = options.volume || 100;
-        this.shoukaku = options.shoukaku;
+        this.volume = options.volume;
+        this.shoukaku = options.ShoukakuPlayer;
         this.queue = new Queue();
         this.loop = 'none';
         this.paused = false;
@@ -129,7 +129,7 @@ export class Player {
     public async destroy() {
         this.queue.length = 0;
         await this.manager.shoukaku.leaveVoiceChannel(this.guildId);
-        this.manager.player.delete(this.guildId);
+        this.manager.players.delete(this.guildId);
         this.manager.emit('playerDestroy', this);
     }
 }
