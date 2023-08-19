@@ -11,7 +11,7 @@
   "files": ["/dist"],  
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FerralTeam/Ferralink.git"
+    "url": "git+https://github.com/vkamsingh/Goruka.git"
   },
   "keywords": [
     "lavalink",
