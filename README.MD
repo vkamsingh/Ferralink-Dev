@@ -156,6 +156,3 @@ if (!player.playing && !player.paused) await player.play();
 >
 > Vkamsingh, Corgi as the owner of [FerraLink](https://github.com/Cd-corgi/Ferralink).
 >
-> Prahar as the maintainer of [FerraLink Docs](https://ferralink.gitbook.io/untitled).
->
-> Inspired by [kazagumo](https://www.npmjs.com/package/kazagumo), [Poru](https://www.npmjs.com/package/poru) and [erela.js](https://www.npmjs.com/package/erela.js).
