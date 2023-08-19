@@ -1,5 +1,5 @@
 module.exports = {
-	FerraLink: require('./src/Ferralink'),
-	Player: require('./src/module/Player'),
-	Queue: require('./src/module/Queue')
+	FerraLink: require('./lib/Ferralink'),
+	Player: require('./lib/module/Player'),
+	Queue: require('./lib/module/Queue')
 };
