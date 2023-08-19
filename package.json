@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "description": "A power lavalink wrapper for nodejs made with shoukaku.",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "exports": {
-    ".": {
-      "require": "./dist/index.js"
-    }
-  },
+  "files": ["/dist"],  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FerralTeam/Ferralink.git"
