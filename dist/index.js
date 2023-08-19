@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Queue = exports.Player = exports.FerraLink = void 0;
-var Ferralink_1 = require("./lib/Ferralink");
+const tslib_1 = require("tslib");
+const Ferralink_1 = require("./lib/Ferralink");
 Object.defineProperty(exports, "FerraLink", { enumerable: true, get: function () { return Ferralink_1.Ferralink; } });
-var Player_1 = require("./lib/module/Player");
+const Player_1 = require("./lib/module/Player");
 Object.defineProperty(exports, "Player", { enumerable: true, get: function () { return Player_1.Player; } });
-var Queue_1 = require("./lib/module/Queue");
+const Queue_1 = tslib_1.__importDefault(require("./lib/module/Queue"));
 exports.Queue = Queue_1.default;

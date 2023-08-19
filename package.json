@@ -33,7 +33,6 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "ferra-link": "github:vkamsingh/Goruka",
     "shoukaku": "github:Deivu/Shoukaku"
   }
 }
