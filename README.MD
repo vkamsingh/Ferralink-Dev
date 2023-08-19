@@ -29,6 +29,11 @@ A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 * Dev: `npm i https://github.com/vkamsingh/Ferralink-Dev.git`
 * Stable: `npm i npm i ferra-link`
 
+## Donations 🧡🧡
+> You can donate to us to improve our project!
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/CorgiOtterBot)
+
 # How to Setup our FerraLink
 
 ## Set the Initilizer of Ferralink
@@ -145,11 +150,6 @@ if (!player.playing && !player.paused) await player.play();
 |   PlayerDestroy   | player	        | Event of the player destroyed.|
 |   PlayerCreate    | player	        | Event of the player create.   |
 </center>
-
-## Donations 🧡🧡
-> You can donate to us to improve our project!
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/CorgiOtterBot)
 
 ## Contributors
 > Deivu as the owner of [Shoukaku](https://github.com/Deivu/Shoukaku).
