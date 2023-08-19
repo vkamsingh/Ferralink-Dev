@@ -1,0 +1,39 @@
+{
+  "name": "ferra-link",
+  "version": "1.0.0",
+  "description": "A power lavalink wrapper for nodejs made with shoukaku.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FerralTeam/Ferralink.git"
+  },
+  "keywords": [
+    "lavalink",
+    "shoukaku",
+    "music",
+    "lavalink-api",
+    "discord"
+  ],
+  "author": "FerralTeam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FerralTeam/Ferralink/issues"
+  },
+  "homepage": "https://github.com/FerralTeam/Ferralink#readme",
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "shoukaku": "github:Deivu/Shoukaku"
+  }
+}
