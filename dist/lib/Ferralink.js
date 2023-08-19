@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -49,9 +50,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { EventEmitter } from 'events';
-import { Shoukaku } from 'shoukaku';
-import { Player } from './module/Player';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Ferralink = void 0;
+var events_1 = require("events");
+var shoukaku_1 = require("shoukaku");
+var Player_1 = require("./module/Player");
 var Ferralink = /** @class */ (function (_super) {
     __extends(Ferralink, _super);
     function Ferralink(options, connector) {
@@ -60,7 +63,7 @@ var Ferralink = /** @class */ (function (_super) {
             throw new Error("[Ferralink] => FerralinkOptions must contain a nodes property");
         if (!options.shoukakuoptions)
             throw new Error('[FerraLink] => FerralinkOptions must contain a shoukakuoptions property');
-        _this.shoukaku = new Shoukaku(connector, options.nodes, options.shoukakuoptions);
+        _this.shoukaku = new shoukaku_1.Shoukaku(connector, options.nodes, options.shoukakuoptions);
         _this.player = new Map();
         _this.defaultSearchEngine = (options === null || options === void 0 ? void 0 : options.defaultSearchEngine) || 'ytsearch';
         return _this;
@@ -82,7 +85,7 @@ var Ferralink = /** @class */ (function (_super) {
                             })];
                     case 1:
                         ShoukakuPlayer = _a.sent();
-                        FerralinkPlayer = new Player(this, {
+                        FerralinkPlayer = new Player_1.Player(this, {
                             guildId: options.guildId,
                             voiceId: options.voiceId,
                             volume: options.volume || 100,
@@ -114,5 +117,5 @@ var Ferralink = /** @class */ (function (_super) {
         });
     };
     return Ferralink;
-}(EventEmitter));
-export { Ferralink };
+}(events_1.EventEmitter));
+exports.Ferralink = Ferralink;

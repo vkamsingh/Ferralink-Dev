@@ -8,10 +8,12 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": ["/dist"],  
+  "files": [
+    "/dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FerralTeam/Ferralink.git"
+    "url": "git+https://github.com/vkamsingh/Goruka.git"
   },
   "keywords": [
     "lavalink",
@@ -31,6 +33,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "ferra-link": "github:vkamsingh/Goruka",
     "shoukaku": "github:Deivu/Shoukaku"
   }
 }

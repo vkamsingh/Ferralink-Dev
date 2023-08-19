@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -34,7 +35,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import Queue from "./Queue";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Player = void 0;
+var Queue_1 = require("./Queue");
 //** @type Player */
 var Player = /** @class */ (function () {
     function Player(manager, options) {
@@ -45,7 +48,7 @@ var Player = /** @class */ (function () {
         this.textId = options.textId;
         this.volume = options.volume || 100;
         this.shoukaku = options.shoukaku;
-        this.queue = new Queue();
+        this.queue = new Queue_1.default();
         this.loop = 'none';
         this.paused = false;
         this.playing = false;
@@ -214,4 +217,4 @@ var Player = /** @class */ (function () {
     };
     return Player;
 }());
-export { Player };
+exports.Player = Player;
