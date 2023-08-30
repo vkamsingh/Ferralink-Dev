@@ -46,8 +46,7 @@ const { FerraLink } = require("ferra-link");
 > Set the Initilizer of Ferralink.
 ```js
 const { Client } = require("discord.js");
-const { FerraLink } = require("ferra-link");
-const { Connectors } = require("shoukaku");
+const { FerraLink, Connectors } = require("ferra-link");
 
 const client = new Client({....});
 
