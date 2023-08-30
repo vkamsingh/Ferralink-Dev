@@ -102,7 +102,7 @@ if (resolve.loadType === LoadType.PLAYLIST) {
     player.queue.add(resolve.data);
 }
 
-// To play track after search and LoadTypes.
+// To play track after search tracks.
 if (!player.playing && !player.paused) await player.play();
 ```
 
