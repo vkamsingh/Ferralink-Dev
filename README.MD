@@ -35,12 +35,12 @@ A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/CorgiOtterBot)
 
 ## Loading and configuring the module.
-# ES Modules (ESM)
+### ES Modules (ESM)
 ```js
 import { FerraLink } from 'ferra-link';
 ```
 
-# CommonJS
+### CommonJS
 ```js
 const { FerraLink } = require("ferra-link");
 ```
