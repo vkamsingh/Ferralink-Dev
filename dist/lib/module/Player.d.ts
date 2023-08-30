@@ -1,12 +1,12 @@
 import { Ferralink } from '../Ferralink';
-import { Player as ShoukakuPlayer } from 'shoukaku';
+import { Player as PlayerShoukaku } from 'shoukaku';
 import Queue from "./Queue";
 export interface PlayerOptions {
     guildId: string;
     voiceId: string;
     volume: number;
     textId: string;
-    ShoukakuPlayer: any;
+    shoukaku: PlayerShoukaku;
 }
 export declare class Player {
     manager: Ferralink;
@@ -14,7 +14,7 @@ export declare class Player {
     voiceId: string;
     textId: string;
     volume: number;
-    shoukaku: ShoukakuPlayer;
+    shoukaku: PlayerShoukaku;
     queue: Queue;
     loop: 'none' | 'track' | 'queue';
     paused: boolean;

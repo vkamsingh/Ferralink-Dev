@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { Shoukaku, Player as ShoukakuPlayer, Track, ShoukakuOptions, Connector } from 'shoukaku';
+import { Shoukaku, Player as PlayerShoukaku, Track, ShoukakuOptions, Connector } from 'shoukaku';
 import { Player } from './module/Player';
 
 
@@ -24,8 +24,9 @@ export interface createPlayerOptions {
 export interface playerMapOptions {
     guildId: string;
     voiceId: string;
+    textId: string;
     volume: number;
-    shoukaku: ShoukakuPlayer;
+    shoukaku: PlayerShoukaku;
 }
 
 export declare interface Ferralink {
@@ -44,7 +45,7 @@ export declare interface Ferralink {
 
 export class Ferralink extends EventEmitter {
     public shoukaku: Shoukaku;
-    public players: Map<string, any>;
+    public players: Map<string, playerMapOptions>;
     public defaultSearchEngine: FerralinkOptions['defaultSearchEngine'];
 
     constructor(options: FerralinkOptions, connector: Connector) {
@@ -71,9 +72,9 @@ export class Ferralink extends EventEmitter {
             existing = new Player(this, {
                 guildId: options.guildId,
                 voiceId: options.voiceId,
-                volume: options?.volume || 100,
                 textId: options.textId,
-                ShoukakuPlayer
+                volume: options?.volume || 100,
+                shoukaku: ShoukakuPlayer
             });
 
             this.players.set(options.guildId, existing);

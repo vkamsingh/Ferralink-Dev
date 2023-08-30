@@ -30,9 +30,9 @@ class Ferralink extends events_1.EventEmitter {
             existing = new Player_1.Player(this, {
                 guildId: options.guildId,
                 voiceId: options.voiceId,
-                volume: options?.volume || 100,
                 textId: options.textId,
-                ShoukakuPlayer
+                volume: options?.volume || 100,
+                shoukaku: ShoukakuPlayer
             });
             this.players.set(options.guildId, existing);
             this.emit('PlayerCreate', existing);

@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { EventEmitter } from 'events';
-import { Shoukaku, Player as ShoukakuPlayer, Track, ShoukakuOptions, Connector } from 'shoukaku';
+import { Shoukaku, Player as PlayerShoukaku, Track, ShoukakuOptions, Connector } from 'shoukaku';
 import { Player } from './module/Player';
 export interface FerralinkOptions {
     nodes: [];
@@ -18,8 +18,9 @@ export interface createPlayerOptions {
 export interface playerMapOptions {
     guildId: string;
     voiceId: string;
+    textId: string;
     volume: number;
-    shoukaku: ShoukakuPlayer;
+    shoukaku: PlayerShoukaku;
 }
 export declare interface Ferralink {
     on(event: 'trackStart', listener: (player: Player, track: Track) => void): this;

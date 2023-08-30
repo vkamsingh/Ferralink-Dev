@@ -22,7 +22,7 @@ class Player {
         this.voiceId = options.voiceId;
         this.textId = options.textId;
         this.volume = options.volume;
-        this.shoukaku = options.ShoukakuPlayer;
+        this.shoukaku = options.shoukaku;
         this.queue = new Queue_1.default();
         this.loop = 'none';
         this.paused = false;

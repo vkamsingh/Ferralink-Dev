@@ -1,5 +1,5 @@
 import { Ferralink } from '../Ferralink';
-import { Player as ShoukakuPlayer, WebSocketClosedEvent, TrackExceptionEvent, PlayerUpdate, TrackStuckEvent } from 'shoukaku';
+import { Player as PlayerShoukaku, WebSocketClosedEvent, TrackExceptionEvent, PlayerUpdate, TrackStuckEvent } from 'shoukaku';
 import Queue from "./Queue";
 
 //** @type PlayerOptions */
@@ -8,7 +8,7 @@ export interface PlayerOptions {
     voiceId: string;
     volume: number;
     textId: string;
-    ShoukakuPlayer;
+    shoukaku: PlayerShoukaku;
 }
 
 //** @type Player */
@@ -18,7 +18,7 @@ export class Player {
     public voiceId: string;
     public textId: string;
     public volume: number;
-    public shoukaku: ShoukakuPlayer;
+    public shoukaku: PlayerShoukaku;
     public queue: Queue;
     public loop: 'none' | 'track' | 'queue';
     public paused: boolean;
@@ -31,7 +31,7 @@ export class Player {
         this.voiceId = options.voiceId;
         this.textId = options.textId;
         this.volume = options.volume;
-        this.shoukaku = options.ShoukakuPlayer;
+        this.shoukaku = options.shoukaku;
         this.queue = new Queue();
         this.loop = 'none';
         this.paused = false;
