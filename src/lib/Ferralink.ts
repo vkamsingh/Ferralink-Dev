@@ -44,7 +44,7 @@ export declare interface Ferralink {
 
 export class Ferralink extends EventEmitter {
     public shoukaku: Shoukaku;
-    public players: Map<createPlayerOptions['guildId'], playerMapOptions>;
+    public players: Map<string, any>;
     public defaultSearchEngine: FerralinkOptions['defaultSearchEngine'];
 
     constructor(options: FerralinkOptions, connector: Connector) {
