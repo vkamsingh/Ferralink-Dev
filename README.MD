@@ -125,7 +125,7 @@ player.search('love nawantiti', { engine: 'scsearch' }); // it will search from 
 player.shoukaku.getIdealNode();
 ```
 
-# Getting the Events (shoukaku)
+## Getting the Events (shoukaku)
 
 > *You can access event with the help of `client.FerraLink.shoukaku.on()....`.*
 
@@ -140,7 +140,7 @@ player.shoukaku.getIdealNode();
 |   debug         | name, reason	      | Event of the node debug.      |
 </center>
 
-# Getting the Events (FerraLink)
+## Getting the Events (FerraLink)
 
 > *You can access event with the help of `client.FerraLink.on()....`.*
 
