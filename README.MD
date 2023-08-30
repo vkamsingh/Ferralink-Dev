@@ -80,21 +80,29 @@ client.login("token");
 const { LoadType } = require('shoukaku');
 
 module.exports = {
-   name: "play",
-   aliases: ["p"],
-   run: async (client, message, args) => {
-   
+  name: "play",
+  description: "Play a song or playlist.",
+  options: [{
+    name: "query",
+    description: "Type song name, song link, playlist link.",
+    type: 3,
+    required: true,
+  }],
+   run: async (client, interaction) => {
+
+const search = interaction.options.getString("query");
+
 const player = await client.FerraLink.createPlayer({
-    guildId: message.guild.id,
-    voiceId: message.member.voice.channel.id,
-    textId: message.channel.id,
-    shardId: message.guild.shardId,
+    guildId: interaction.guild.id,
+    voiceId: interaction.member.voice.channel.id,
+    textId: interaction.channel.id,
+    shardId: interaction.guild.shardId,
     volume: 100,
     deaf: true,
 });
 
-const resolve = await player.search(args.join(' '));
-if (!resolve || [LoadType.ERROR, LoadType.EMPTY].includes(resolve.loadType)) return message.reply({ content: "No match songs result found!" });
+const resolve = await player.search(search);
+if (!resolve || [LoadType.ERROR, LoadType.EMPTY].includes(resolve.loadType)) return interaction.followUp({ content: "No match songs result found!" });
 
 if (resolve.loadType === LoadType.PLAYLIST) {
   for (const track of resolve.data.tracks) {
@@ -107,9 +115,11 @@ if (resolve.loadType === LoadType.PLAYLIST) {
 }
 
 if (resolve.loadType === LoadType.PLAYLIST) {
-    message.channel.send({ content: `Added ${player.queue.length} tracks from **${resolve.data.info.name}**` });
+    interaction.followUp({ content: `Added ${player.queue.length} tracks from **${resolve.data.info.name}**` });
+} else if (resolve.loadType === LoadType.SEARCH) {
+    interaction.followUp({ content: `Added [${resolve.data[0].info.title}](${resolve.data[0].info.uri}) to queue` });
 } else {
-    message.channel.send({ content: `Added [${resolve.data[0].info.title}](${resolve.data[0].info.uri}) to queue` });
+    interaction.followUp({ content: `Added [${resolve.data.info.title}](${resolve.data.info.uri}) to queue` });
 }
 
 if (!player.playing && !player.paused) await player.play();
