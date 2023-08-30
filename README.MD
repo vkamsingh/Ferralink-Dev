@@ -118,7 +118,7 @@ player.setTextChannel(channelId);
 player.setVoiceChannel(channelId);
 
 // There are 2 way you can define search.
-player.search('love nawantiti'); // it will be search from default defaultSearchEngine.
+player.search('love nawantiti'); // it will be search from defaultSearchEngine.
 player.search('love nawantiti', { engine: 'scsearch' }); // it will search from engine you defined here not from defaultSearchEngine.
 
 // To get node for stats, custom functions etc.
