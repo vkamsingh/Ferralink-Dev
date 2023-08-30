@@ -73,7 +73,7 @@ const player = await client.FerraLink.createPlayer({
     deaf: true,
 });
 ```
-> To search tracks, define LoadType (LoadType will be import from Shoukaku).
+> To search tracks and define LoadType (LoadType will be import from Shoukaku).
 ```js
 // import LoadType from shoukaku.
 const { LoadType } = require('shoukaku'); 
