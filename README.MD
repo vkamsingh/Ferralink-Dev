@@ -94,12 +94,12 @@ if (!resolve || [LoadType.ERROR, LoadType.EMPTY].includes(resolve.loadType)) ret
 //LoadTypes for playlist, search and track.
 if (resolve.loadType === LoadType.PLAYLIST) {
   for (const track of resolve.data.tracks) {
-        player.queue.add(track);
+        player.queue.add(track, { requester: interaction.user });
     }
 } else if (resolve.loadType === LoadType.SEARCH) {
-    player.queue.add(resolve.data[0]);
+    player.queue.add(resolve.data[0], { requester: interaction.user });
 } else {
-    player.queue.add(resolve.data);
+    player.queue.add(resolve.data, { requester: interaction.user });
 }
 
 // To play track after search tracks.
