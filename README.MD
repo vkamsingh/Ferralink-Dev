@@ -34,6 +34,17 @@ A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/CorgiOtterBot)
 
+## Loading and configuring the module.
+# ES Modules (ESM)
+```js
+import { FerraLink } from 'ferra-link';
+```
+
+# CommonJS
+```js
+const { FerraLink } = require("ferra-link");
+```
+
 ## Small code snippet examples.
 > Set the Initilizer of Ferralink.
 ```js
@@ -75,7 +86,6 @@ const player = await client.FerraLink.createPlayer({
 ```
 > To search tracks and define LoadType (LoadType will be import from Shoukaku).
 ```js
-// import LoadType from shoukaku.
 const { LoadType } = require('shoukaku'); 
 
 //search track from player.
