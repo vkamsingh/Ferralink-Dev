@@ -8,15 +8,21 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/Cd-corgi/Ferralink?style=flat-square)
 
 
-# 🎶 FerraLink
+## 🎶 FerraLink
 
 A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 
-# 📂 Implementation
+## Features
+
+- Stable.
+- ESM & CommonJS supported.
+- Updated for Lavalink v4.
+
+## 📂 Implementation
 - A [example bot](https://github.com/vkamsingh/Ferralink-Example) as guide for beginners.
 - If you have any issues, please join our [support server](https://discord.gg/8n3yNqtPAE).
 
-# 📦 How to Install FerraLink
+## 📦 How to Install FerraLink
 * Dev: `npm i https://github.com/vkamsingh/Ferralink-Dev.git`
 * Stable: `npm i npm i ferra-link`
 
