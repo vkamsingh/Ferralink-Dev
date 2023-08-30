@@ -26,11 +26,6 @@ A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 * Dev: `npm i https://github.com/vkamsingh/Ferralink-Dev.git`
 * Stable: `npm i npm i ferra-link`
 
-## Donations 🧡🧡
-> You can donate to us to improve our project!
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/CorgiOtterBot)
-
 ## Loading and configuring the module.
 ### ES Modules (ESM)
 ```js
