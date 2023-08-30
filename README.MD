@@ -114,7 +114,7 @@ player.setVoiceChannel(channelId);
 player.search('love nawantiti'); // it will be search from default defaultSearchEngine.
 player.search('love nawantiti', { engine: 'scsearch' }); // it will search from engine you defined here not from defaultSearchEngine.
 
-// To get node data for stats, custom function etc.
+// To get node for stats, custom functions etc.
 player.shoukaku.getIdealNode();
 ```
 
