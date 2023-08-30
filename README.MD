@@ -102,7 +102,7 @@ if (!player.playing && !player.paused) await player.play();
 
 > some basic methods.
 ```js
-// There are 3 kinds of volumes methods you can set.
+// There are 3 kinds of methods you can set volume.
 player.setVolume(100);
 await player.shoukaku.setGlobalVolume(100);
 await player.shoukaku.setFilterVolume(1.0) // 1.0 = 100;
@@ -111,7 +111,7 @@ await player.shoukaku.setFilterVolume(1.0) // 1.0 = 100;
 player.setTextChannel(channelId);
 player.setVoiceChannel(channelId);
 
-// There are 2 way you can define search.
+// There are 2 kind of methods you can set search.
 player.search('love nawantiti'); // it will be search from defaultSearchEngine.
 player.search('love nawantiti', { engine: 'scsearch' }); // it will search from engine you defined here not from defaultSearchEngine.
 
