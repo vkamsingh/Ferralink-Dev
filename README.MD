@@ -127,7 +127,7 @@ player.shoukaku.getIdealNode();
 
 ## Getting the Events (shoukaku)
 
-> *You can access event with the help of `client.FerraLink.shoukaku.on()....`.*
+> *You can access event with the help of `client.FerraLink.shoukaku.on(...)`.*
 
 <center>
 
@@ -142,7 +142,7 @@ player.shoukaku.getIdealNode();
 
 ## Getting the Events (FerraLink)
 
-> *You can access event with the help of `client.FerraLink.on()....`.*
+> *You can access event with the help of `client.FerraLink.on(...)`.*
 
 <center>
 
