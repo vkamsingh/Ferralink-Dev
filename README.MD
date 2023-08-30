@@ -34,26 +34,14 @@ A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/CorgiOtterBot)
 
-# How to Setup our FerraLink
-
-## Set the Initilizer of Ferralink
-
-*Creating in a way like the code example you can import the bot, nodes and shoukakuOptions.*
-
+## Small code snippet examples.
+> Set the Initilizer of Ferralink.
 ```js
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client } = require("discord.js");
 const { FerraLink } = require("ferra-link");
 const { Connectors } = require("shoukaku");
 
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.MessageContent
-    ],
-});
-
+const client = new Client({....});
 
 client.FerraLink = new FerraLink({
     nodes: [{
@@ -74,24 +62,8 @@ client.FerraLink = new FerraLink({
 
 client.login("token");
 ```
-
-## A small example to create play command.
+> create a player to join voice channel.
 ```js
-const { LoadType } = require('shoukaku');
-
-module.exports = {
-  name: "play",
-  description: "Play a song or playlist.",
-  options: [{
-    name: "query",
-    description: "Type song name, song link, playlist link.",
-    type: 3,
-    required: true,
-  }],
-   run: async (client, interaction) => {
-
-const search = interaction.options.getString("query");
-
 const player = await client.FerraLink.createPlayer({
     guildId: interaction.guild.id,
     voiceId: interaction.member.voice.channel.id,
@@ -100,10 +72,19 @@ const player = await client.FerraLink.createPlayer({
     volume: 100,
     deaf: true,
 });
+```
+> To search tracks, define LoadType (LoadType will be import from Shoukaku).
+```js
+// import LoadType from shoukaku.
+const { LoadType } = require('shoukaku'); 
 
-const resolve = await player.search(search);
+//search track from player.
+const resolve = await player.search('love nawantiti', { engine: 'spsearch' });
+
+//When tracks will not find it will return LoadType empty.
 if (!resolve || [LoadType.ERROR, LoadType.EMPTY].includes(resolve.loadType)) return interaction.followUp({ content: "No match songs result found!" });
 
+//LoadTypes for playlist, search and track.
 if (resolve.loadType === LoadType.PLAYLIST) {
   for (const track of resolve.data.tracks) {
         player.queue.add(track);
@@ -114,15 +95,27 @@ if (resolve.loadType === LoadType.PLAYLIST) {
     player.queue.add(resolve.data);
 }
 
-if (resolve.loadType === LoadType.PLAYLIST) {
-    interaction.followUp({ content: `Added ${player.queue.length} tracks from **${resolve.data.info.name}**` });
-} else if (resolve.loadType === LoadType.SEARCH) {
-    interaction.followUp({ content: `Added [${resolve.data[0].info.title}](${resolve.data[0].info.uri}) to queue` });
-} else {
-    interaction.followUp({ content: `Added [${resolve.data.info.title}](${resolve.data.info.uri}) to queue` });
-}
-
+// To play track after search and LoadTypes.
 if (!player.playing && !player.paused) await player.play();
+```
+
+> some basic methods.
+```js
+// There are 3 kinds of volumes methods you can set.
+player.setVolume(100);
+await player.shoukaku.setGlobalVolume(100);
+await player.shoukaku.setFilterVolume(1.0) // 1.0 = 100;
+
+// To set custom text channel and voice channel.
+player.setTextChannel(channelId);
+player.setVoiceChannel(channelId);
+
+// There are 2 way you can define search.
+player.search('love nawantiti'); // it will be search from default defaultSearchEngine.
+player.search('love nawantiti', { engine: 'scsearch' }); // it will search from engine you defined here not from defaultSearchEngine.
+
+// To get node data for stats, custom function etc.
+player.shoukaku.getIdealNode();
 ```
 
 # Getting the Events (shoukaku)
