@@ -10,7 +10,7 @@
 
 ## 🎶 FerraLink
 
-A Simple but powerful Lavalink Client With amazing features.
+A simple but powerful Lavalink client with amazing features
 
 ## Features
 
