@@ -26,7 +26,7 @@ A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
 * Dev: `npm i https://github.com/vkamsingh/Ferralink-Dev.git`
 * Stable: `npm i npm i ferra-link`
 
-## Loading and configuring the module.
+## Configuring the module.
 ### ES Modules (ESM)
 ```js
 import { FerraLink } from 'ferra-link';
