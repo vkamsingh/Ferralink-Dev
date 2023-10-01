@@ -10,7 +10,7 @@
 
 ## 🎶 FerraLink
 
-A Simple but powerful Lavalink Client for your JavaScript Discord Bot!
+A Simple but powerful Lavalink Client With amazing features.
 
 ## Features
 
