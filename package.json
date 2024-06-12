@@ -33,6 +33,6 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "shoukaku": "github:Deivu/Shoukaku"
+    "shoukaku": "^4.0.1 "
   }
 }
